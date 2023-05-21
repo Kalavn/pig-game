@@ -11,8 +11,8 @@ const currentScore = document.querySelectorAll('.current-score');
 const dice = document.querySelector('.dice');
 
 let activePlayer = 1;
-// const player0 = document.querySelector('.player--0');
-// const player1 = document.querySelector('.player--1');
+const player0 = document.querySelector('.player--0');
+const player1 = document.querySelector('.player--1');
 const player = document.querySelectorAll('.player');
 let totalScore = 0;
 
@@ -81,11 +81,12 @@ btnReset.addEventListener('click', function () {
   current = 0;
   totalScore = 0;
   dice.classList.add('hidden');
-  activePlayer = 1;
   total0Score.textContent = 0;
   total1Score.textContent = 0;
-  player[`${activePlayer}`].classList.add('player--active');
   player[`${activePlayer}`].classList.remove('win');
+  player[`${activePlayer}`].classList.remove('player--active');
   current0Score.textContent = 0;
   current1Score.textContent = 0;
+  activePlayer = 1;
+  player[`${activePlayer}`].classList.add('player--active');
 });
